@@ -1,4 +1,4 @@
-package com.greatconan.conan.util;
+package com.greatconan.conan.test;
 
 import us.codecraft.webmagic.Page;
 import us.codecraft.webmagic.Site;
@@ -51,7 +51,7 @@ public class ZhihuPageProcessor implements PageProcessor {
 
     public static void main(String[] args) {
         Spider.create(new ZhihuPageProcessor()).
-                addUrl("http://www.zhihu.com/search?type=question&q=java ").
+                addUrl("http://www.zhihu.com/search?type=question&q=java").
                 addPipeline(new FilePipeline("D:\\webmagic\\")).
                 thread(5).
                 run();

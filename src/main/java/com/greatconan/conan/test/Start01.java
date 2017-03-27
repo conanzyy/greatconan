@@ -5,8 +5,10 @@ import org.apache.log4j.Logger;
 
 import us.codecraft.webmagic.Page;
 import us.codecraft.webmagic.Site;
-import us.codecraft.webmagic.Spider;
 import us.codecraft.webmagic.processor.PageProcessor;
+
+import com.greatconan.conan.model.FtpUseBean;
+import com.greatconan.conan.util.FtpUtil;
 
 public class Start01 implements PageProcessor {
 
@@ -29,7 +31,12 @@ public class Start01 implements PageProcessor {
 
     public static void main(String[] args) {
     	Logger logger = Logger.getLogger(Start01.class);
-    	logger.error("---test---");
-        Spider.create(new Start01()).addUrl("https://github.com/code4craft").thread(5).run();
+    	logger.debug("---test-start---");
+    	FtpUtil ftpUtil =new FtpUtil();
+    	FtpUseBean ftpUseBean =new FtpUseBean();
+    	ftpUtil.setFtpUseBean(ftpUseBean);
+    	ftpUtil.ftpLogin();
+//        Spider.create(new Start01()).addUrl("https://github.com/code4craft").thread(5).run();
+    	logger.debug("---test-end---");
     }
 }
