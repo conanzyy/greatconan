@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>网站导航</title>
+<meta name="keywords" content="网站导航">
+<meta name="description" content="网站导航">
+<link type="text/css" rel="stylesheet" href="common.css">
+<script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<style type="text/css">
+body,td,th { font-family: \5FAE\8F6F\96C5\9ED1, \5B8B\4F53, Verdana, sans-serif; }
+</style>
+</head>
+<body>
+<div class="nav_bar">
+	<div class="wrap"><span class="domain">网站导航</span><div class="nav_bar_r">http://okinjphp.duapp.com/</div>
+	<div class="nav_bar_r" id='dothis'><a id="zd">折叠全部</a></div>
+	<div class="nav_bar_r right" ><a href="javascript:adminthis();">管理</a></div>
+	</div>
+</div>
+
+<div class="wrap mt20 nav">
+<div class="btcont">搜索引擎</div>
+	<ul class="nav nav_menu clearfix">
+	<li><a href="http://www.baidu.com" target="_blank">百 度</a></li>
+	<li><a href="http://www.google.com.hk" target="_blank">谷 歌</a></li>
+	</ul>
+</div>
+<div class="fh"></div>
+<div class="wrap mt1 nav">
+<div class="btcont">购物</div>
+	<ul class="nav nav_menu clearfix">
+		<li><a href="http://www.taobao.com/" target="_blank">淘宝</a></li>
+		<li><a href="http://www.jd.com/" target="_blank">京东</a></li>
+		<li><a href="http://www.amazon.cn/" target="_blank">亚马逊</a></li>
+        <li><a href="http://www.suning.com/" target="_blank">苏宁</a></li>
+	</ul>
+</div>
+<div class="fh"></div>
+<div class="wrap mt1 nav">
+<div class="btcont">影音</div>
+	<ul class="nav_menu clearfix">
+        <li><a href="http://www.iqiyi.com/" target="_blank">爱奇艺</a></li>
+        <li><a href="http://www.youku.com/" target="_blank">优酷</a></li>
+        <li><a href="http://v.qq.com/" target="_blank">腾讯视频</a></li>
+        <li><a href="http://www.pptv.com/" target="_blank">PPTV</a></li>
+        <li><a href="http://www.le.com/" target="_blank">乐视</a></li>
+        <li><a href="http://www.dytt8.net/" target="_blank">电影天堂</a></li>
+	</ul>
+</div>
+<div class="fh"></div>
+<div class="wrap mt1 nav">
+<div class="btcont">工具</div>
+	<ul class="nav_menu clearfix">
+        <li><a href="http://www.qunar.com/" target="_blank">百度脑图</a></li>
+        <li><a href="http://tool.chinaz.com/" target="_blank">站长工具</a></li>
+        <li><a href="http://www.renrensousuo.com/" target="_blank">众人搜索</a></li>
+        <li><a href="http://ocr.wdku.net/" target="_blank">图片转文字在线</a></li>
+        <li><a href="http://www.baidu.com/s?wd=abbyy%20finereader%2012" target="_blank">图片转文字工具</a></li>
+        <li><a href="http://www.logomaker.com.cn/logo-maker.jsp" target="_blank">logo在线</a></li>
+        <li><a href="http://www.dmd5.com/md5-decrypter.jsp" target="_blank">MD5解密</a></li>
+        <li><a href="http://okinjphp.duapp.com/lib/login.php" target="_blank">图书馆</a></li>
+        <li><a href="http://handan.hx9999.com/hxstudio" target="_blank">恒信</a></li>
+        <li><a href="http://www.citethisforme.com/zh" target="_blank">文献生成</a></li>
+	</ul>
+</div>
+<div class="fh"></div>
+<div class="wrap mt1 nav">
+<div class="btcont">游戏</div>
+	<ul class="nav_menu clearfix">
+        <li><a href="http://bbs.tgbus.com/forum-1236-1.html" target="_blank">3DS</a></li>
+        <li><a href="http://www.ali213.net/" target="_blank">游侠网</a></li>
+	</ul>
+</div>
+<div class="fh"></div>
+<div class="wrap mt1 nav">
+<div class="btcont">云盘</div>
+	<ul class="nav_menu clearfix">
+        <li><a href="http://pan.baidu.com/" target="_blank">百度云</a></li>
+        <li><a href="http://www.weiyun.com/" target="_blank">微云</a></li>
+        <li><a href="http://www.115.com/" target="_blank">115</a></li>
+	</ul>
+</div>
+<div class="fh"></div>
+<div class="wrap mt1 nav">
+<div class="btcont">云服务</div>
+	<ul class="nav_menu clearfix">
+        <li><a href="http://www.aliyun.com/" target="_blank">阿里云</a></li>
+        <li><a href="http://cloud.baidu.com/" target="_blank">百度云</a></li>
+        <li><a href="http://aws.amazon.com/" target="_blank">亚马逊云</a></li>		
+	</ul>
+</div>
+<div class="fh"></div>
+<div class="wrap mt1 nav">
+<div class="btcont">IT</div>
+	<ul class="nav_menu clearfix">
+	    <li><a href="http://www.w3school.com.cn/" target="_blank">W3C</a></li>
+		<li><a href="http://deerchao.net/tutorials/regex/regex.htm" target="_blank">正则</a></li>
+		<li><a href="http://wenbenbijiao.renrensousuo.com/" target="_blank">文本比对1</a></li>
+		<li><a href="http://tool.oschina.net/diff/" target="_blank">文本比对2</a></li>
+		<li><a href="http://www.jq22.com/textDifference/" target="_blank">文本比对3</a></li>
+		<li><a href="http://json.cn/" target="_blank">JOSN格式化</a></li>
+		<li><a href="http://tool.chinaz.com/Tools/Unicode.aspx/" target="_blank">Unicode转化</a></li>
+		<li><a href="http://www.iconfont.cn/" target="_blank">Icon</a></li>
+		<li><a href="https://icomoon.io/" target="_blank">SVG</a></li>
+	</ul>
+</div>
+<div class="fh"></div>
+<div class="wrap mt1 nav">
+<div class="btcont">苏宁</div>
+	<ul class="nav_menu clearfix">
+		<li><a href="http://oa.cnsuning.com/portal/root/login.jsp" target="_blank">OA</a></li>
+	    <li><a href="http://cd.cnsuning.com/udmp-web-in/index.html#/dashboard" target="_blank">CD平台</a></li>
+		<li><a href="http://jira.cnsuning.com/secure/Dashboard.jspa" target="_blank">JIRA平台</a></li>
+		<li><a href="http://rsfsit.cnsuning.com/" target="_blank">RSF平台</a></li>
+		<li><a href="http://myesb.cnsuning.com/esbauto-web-in/log_in.htm" target="_blank">ESB平台</a></li>
+		<li><a href="http://scmsit.cnsuning.com/snf-scm-server/index.htm" target="_blank">统一配置平台</a></li>
+	</ul>
+</div>
+<div class="fh"></div>
+<div class="wrap mt1 nav">
+<div class="btcont">金融</div>
+	<ul class="nav_menu clearfix" >
+		<li><a href="https://www.alipay.com/" target="_blank">支付宝</a></li>
+		<li><a href="http://jr.jd.com/" target="_blank">京东金融</a></li>
+		<li><a href="http://www.boc.cn/" target="_blank">中国银行</a></li>
+		<li><a href="http://www.icbc.com.cn/icbc/" target="_blank">工商银行</a></li>
+		<li><a href="http://www.ccb.com/cn/home/index.html" target="_blank">建设银行</a></li>
+		<li><a href="http://www.95599.cn/cn/" target="_blank">农业银行</a></li>
+		<li><a href="http://www.cmbchina.com/" target="_blank">招商银行</a></li>
+		<li><a href="http://www.cmbc.com.cn" target="_blank">民生银行</a></li>
+		<li><a href="http://www.bankcomm.com/" target="_blank">交通银行</a></li>
+		<li><a href="http://www.cib.com.cn/" target="_blank">兴业银行</a></li>
+		<li><a href="http://www.cebbank.com/" target="_blank">光大银行</a></li>
+		<li><a href="http://www.psbc.com/" target="_blank">邮政储蓄</a></li>
+		<li><a href="http://bank.ecitic.com/" target="_blank">中信银行</a></li>
+	</ul>
+</div>
+<div class="fh"></div>
+<div class="wrap mt1 nav">
+<div class="btcont">百科</div>
+	<ul class="nav_menu clearfix" >
+		<li><a href="http://zhidao.baidu.com/" target="_blank">百度知道</a></li>
+		<li><a href="http://wenwen.sogou.com/" target="_blank">搜狗问问</a></li>
+		<li><a href="http://wenda.tianya.cn/" target="_blank">天涯问答</a></li>
+		<li><a href="http://iask.sina.com.cn/" target="_blank">新浪爱问</a></li>
+		<li><a href="http://wenda.sohu.com/" target="_blank">搜狐问答</a></li>
+		<li><a href="http://www.guokr.com/ask/" target="_blank">果壳问答</a></li>
+		<li><a href="http://wenda.so.com/" target="_blank">360问答</a></li>
+		<li><a href="http://www.zhihu.com/" target="_blank">知 乎</a></li>
+		<li><a href="http://wenda.china.com/" target="_blank">中华网问答</a></li>
+		<li><a href="http://www.cnki.net/" target="_blank">中国知网</a></li>
+	</ul>
+</div>
+<div class="fh"></div>
+<div class="wrap mt1 nav">
+<div class="btcont">其他</div>
+	<ul class="nav_menu clearfix">
+        <li><a href="http://www.qunar.com/" target="_blank">百度脑图</a></li>
+	</ul>
+</div>
+<br>
+<div class="wrap2 mt20 clearfix">
+	<ul class="nav_menu_foot clearfix">
+		<li><a href="www.qimiweb.com" class="ab" target="_blank">广告位</a></li>
+		<li><a href="www.qimiweb.com" target="_blank">广告位</a></li>
+		<li><a href="www.qimiweb.com" target="_blank">广告位</a></li>
+		<li><a href="www.qimiweb.com" target="_blank">广告位</a></li>
+		<li><a href="www.qimiweb.com" target="_blank">广告位</a></li>
+		<li><a href="www.qimiweb.com" target="_blank">广告位</a></li>
+		<li><a href="www.qimiweb.com" target="_blank">广告位</a></li>
+	</ul>
+</div>
+
+<span style="display:none;">
+
+</span>
+</body></html>
