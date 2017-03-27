@@ -29,7 +29,7 @@ public class Start01 implements PageProcessor {
 
     public static void main(String[] args) {
     	Logger logger = Logger.getLogger(Start01.class);
-    	logger.info("---test---");
+    	logger.error("---test---");
         Spider.create(new Start01()).addUrl("https://github.com/code4craft").thread(5).run();
     }
 }
