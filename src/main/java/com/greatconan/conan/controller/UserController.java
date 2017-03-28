@@ -28,8 +28,14 @@ public class UserController {
 	}
 	
 	@RequestMapping("/user/registerView")
-	public String registerView(){
-		return "register";
+	public ModelAndView registerView(){
+		ModelAndView mav = new ModelAndView();
+		User user =new User();
+		user.setUserName("testname");
+		mav.setViewName("login");
+		mav.addObject("errorMsg","qwrert");
+		mav.addObject("test_user",user);
+		return mav;
 	}
 	
 	@RequestMapping("/user/login")
