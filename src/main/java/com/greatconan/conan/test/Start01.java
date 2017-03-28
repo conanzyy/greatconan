@@ -6,12 +6,14 @@ import java.util.List;
 
 import org.apache.commons.net.ftp.FTPClient;
 import org.apache.log4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import us.codecraft.webmagic.Page;
 import us.codecraft.webmagic.Site;
 import us.codecraft.webmagic.processor.PageProcessor;
 
 import com.greatconan.conan.util.FtpUtil;
+import com.greatconan.conan.util.JsonUtils;
 
 public class Start01 implements PageProcessor {
 
@@ -33,8 +35,9 @@ public class Start01 implements PageProcessor {
     }
 
     public static void main(String[] args) throws Exception {
-    	Logger logger = Logger.getLogger(Start01.class);
-    	logger.debug("---test-start---");
+    	org.slf4j.Logger LOGGER = LoggerFactory.getLogger(Start01.class);
+//    	Logger logger = Logger.getLogger(Start01.class);
+    	LOGGER.debug("---test-start---");
 //    	FtpUtil ftpUtil =new FtpUtil();
 //    	FtpUseBean ftpUseBean =new FtpUseBean();
 //    	ftpUseBean.setUserName("conanzyy");
@@ -68,6 +71,6 @@ public class Start01 implements PageProcessor {
 //        ftpUtils.uploadFile("127.0.0.1", 21, "conanzyy", "123456","","1.txt",is);
         
 //        Spider.create(new Start01()).addUrl("https://github.com/code4craft").thread(5).run();
-    	logger.debug("---test-end---");
+    	    LOGGER.debug("---test-end---");
     }
 }
