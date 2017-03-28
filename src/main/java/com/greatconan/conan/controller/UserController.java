@@ -1,5 +1,12 @@
 package com.greatconan.conan.controller;
 
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,7 +34,6 @@ public class UserController {
 	
 	@RequestMapping("/user/login")
 	public ModelAndView login(User user){
-		System.out.println(11);
 		ModelAndView mav = new ModelAndView();
 		User u = userService.loginCheck(user);
 		if(null==u){
@@ -40,6 +46,16 @@ public class UserController {
 			mav.addObject("user", u);
 			return mav;
 		}
+	}
+	
+	@RequestMapping(value = "/getResult")
+	public String doSearch(HttpServletRequest req,
+			HttpServletResponse res, HttpSession sess,String Astr,String Bstr) throws IOException, ServletException {
+		if(Astr==null||Astr.trim().equals("")||Bstr==null||Bstr.trim().equals("")){
+			res.sendRedirect("front.do");
+		}
+
+		return "/jsp/result";
 	}
 	
 	@RequestMapping("/user/register")
