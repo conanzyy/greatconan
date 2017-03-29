@@ -31,17 +31,20 @@ public class UserController extends BaseController {
 	}
 	
 	@RequestMapping("/user/registerView")
-	public ModelAndView registerView(){
+	public ModelAndView registerView(HttpServletRequest req,
+			HttpServletResponse res){
 		logger.info("--/user/registerView--in");
+		String code=req.getParameter("code");
 		List actualResult=new ArrayList();
 //		actualResult.add("21");
 		boolean stringflag=BeanUtil.compare("upload.ftl", actualResult);
 		logger.info(stringflag);
 		ModelAndView mav = new ModelAndView();
 		User user =new User();
-		user.setUserName("testname");
+		user.setUserName("张三");
 		mav.setViewName("login");
 		mav.addObject("Msg","qwrert");
+		mav.addObject("code",code);
 		mav.addObject("test_user",user);
 		return mav;
 	}
