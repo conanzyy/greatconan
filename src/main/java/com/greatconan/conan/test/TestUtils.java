@@ -5,6 +5,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.commons.collections.CollectionUtils;
+import org.apache.commons.collections.MapUtils;
+import org.apache.commons.lang3.StringUtils;
+
 import com.greatconan.conan.model.User;
 import com.greatconan.conan.util.BeanUtil;
 import com.greatconan.conan.util.JsonUtils;
@@ -50,6 +54,11 @@ public static void main(String[] args) {
 	System.out.println(mapflag);
 	JsonUtils.formatBeanToJsonStr(user);
 	JsonUtils.parseJsonStrToBean("", User.class);
+	
+	StringUtils.isEmpty("");
+	CollectionUtils.isEmpty(list);
+	MapUtils.isEmpty(map2);
+	
 	
 	
 }
