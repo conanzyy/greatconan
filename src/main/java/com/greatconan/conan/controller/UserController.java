@@ -55,14 +55,19 @@ public class UserController extends BaseController {
 	@RequestMapping("/user/login")
 	public ModelAndView login(User user){
 		ModelAndView mav = new ModelAndView();
+		user=new User();
+		user.setUserName("zyy");
+		user.setPassword("12323");
 		User u = userService.loginCheck(user);
+//		logger.info(u.getPassword());
 		if(null==u){
 			mav.setViewName("login");
-			mav.addObject("errorMsg","用户名或密码有误！");
+			mav.addObject("Msg","用户名或密码有误！");
 			return mav;
 		}
 		else{
-			mav.setViewName("success");
+//			mav.setViewName("success");
+			mav.setViewName("login");
 			mav.addObject("user", u);
 			return mav;
 		}
