@@ -1,6 +1,8 @@
 package com.greatconan.conan.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -14,6 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.greatconan.conan.model.User;
 import com.greatconan.conan.service.UserService;
+import com.greatconan.conan.util.BeanUtil;
 
 
 @Controller
@@ -30,11 +33,15 @@ public class UserController extends BaseController {
 	@RequestMapping("/user/registerView")
 	public ModelAndView registerView(){
 		LOGGER.info("--/user/registerView--in");
+		List actualResult=new ArrayList();
+//		actualResult.add("21");
+		boolean stringflag=BeanUtil.compare("upload.ftl", actualResult);
+		LOGGER.info(stringflag);
 		ModelAndView mav = new ModelAndView();
 		User user =new User();
 		user.setUserName("testname");
 		mav.setViewName("login");
-		mav.addObject("errorMsg","qwrert");
+		mav.addObject("Msg","qwrert");
 		mav.addObject("test_user",user);
 		return mav;
 	}
