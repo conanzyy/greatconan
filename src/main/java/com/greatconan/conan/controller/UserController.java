@@ -17,7 +17,7 @@ import com.greatconan.conan.service.UserService;
 
 
 @Controller
-public class UserController {
+public class UserController extends BaseController {
 	
 	@Autowired
 	private UserService userService;
@@ -29,6 +29,7 @@ public class UserController {
 	
 	@RequestMapping("/user/registerView")
 	public ModelAndView registerView(){
+		LOGGER.info("--/user/registerView--in");
 		ModelAndView mav = new ModelAndView();
 		User user =new User();
 		user.setUserName("testname");
