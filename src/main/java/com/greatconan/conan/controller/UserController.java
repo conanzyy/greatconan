@@ -11,6 +11,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -30,10 +31,11 @@ public class UserController extends BaseController {
 		return "login";
 	}
 	
-	@RequestMapping("/user/registerView")
-	public ModelAndView registerView(HttpServletRequest req,
+	@RequestMapping(value = "/main/{req}.do")
+	public ModelAndView registerView(@PathVariable("req") String reqstr,HttpServletRequest req,
 			HttpServletResponse res){
-		logger.info("--/user/registerView--in");
+		logger.info("---start----/main-"+reqstr+"-in");
+		
 		String code=req.getParameter("code");
 		List actualResult=new ArrayList();
 //		actualResult.add("21");
@@ -46,6 +48,7 @@ public class UserController extends BaseController {
 		mav.addObject("Msg","qwrert");
 		mav.addObject("code",code);
 		mav.addObject("test_user",user);
+		logger.info("---end----/main-"+reqstr+"-in");
 		return mav;
 	}
 	
