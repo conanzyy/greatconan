@@ -32,11 +32,11 @@ public class UserController extends BaseController {
 	
 	@RequestMapping("/user/registerView")
 	public ModelAndView registerView(){
-		LOGGER.info("--/user/registerView--in");
+		logger.info("--/user/registerView--in");
 		List actualResult=new ArrayList();
 //		actualResult.add("21");
 		boolean stringflag=BeanUtil.compare("upload.ftl", actualResult);
-		LOGGER.info(stringflag);
+		logger.info(stringflag);
 		ModelAndView mav = new ModelAndView();
 		User user =new User();
 		user.setUserName("testname");

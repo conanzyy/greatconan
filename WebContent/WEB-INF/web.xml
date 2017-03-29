@@ -66,6 +66,7 @@
   <servlet-mapping>
     <servlet-name>spring</servlet-name>
     <url-pattern>*.do</url-pattern>
+    <url-pattern>*.json</url-pattern>
   </servlet-mapping>
   <!-- Spring字符集过滤器 -->
 	<filter>
