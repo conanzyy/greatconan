@@ -9,15 +9,16 @@ import org.slf4j.LoggerFactory;
 
 import com.greatconan.commons.core.base.impl.BaseDAOImpl;
 import com.greatconan.conan.model.User;
+import com.greatconan.conan.util.ArrayUtils;
 import com.greatconan.conan.util.JsonUtils;
 
 public class testdb {
 	public static Logger logger = LoggerFactory.getLogger(BaseDAOImpl.class);
 	public static void main(String[] args) {
-		Object[] arg=new Object[]{"asdsa","sdfsd"};
+		Object[] arg=new Object[]{"111","222",null,"3333","444",null,"55"};
 		String sql="select * from user;";
 		logger.info("SQL_SENTENCE:" + sql);
-		logger.info("SQL_SENTENCE_PARAMES:" + Arrays.toString(arg));
+		logger.info("SQL_SENTENCE_PARAMES:" + Arrays.toString(ArrayUtils.getObjects(arg)));
 		long start=System.currentTimeMillis();
 		List a =new ArrayList();
 		User b=new User();

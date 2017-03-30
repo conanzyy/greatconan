@@ -12,6 +12,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import com.greatconan.commons.core.base.IBaseDAO;
+import com.greatconan.conan.util.ArrayUtils;
 import com.greatconan.conan.util.JsonUtils;
 
 /**
@@ -38,9 +39,9 @@ public class BaseDAOImpl implements IBaseDAO {
 
 	public List queryForList(String sql, Object[] args) {
 		logger.info("SQL_SENTENCE:" + sql);
-		logger.info("SQL_SENTENCE_PARAMES:" + Arrays.toString(args));
+		logger.info("SQL_SENTENCE_PARAMES:" + Arrays.toString(ArrayUtils.getObjects(args)));
 		long start=System.currentTimeMillis();
-		List list = this.jdbcTemplate.queryForList(sql, args);
+		List list = this.jdbcTemplate.queryForList(sql, ArrayUtils.getObjects(args));
 		long end=System.currentTimeMillis();
 		logger.info("SQL_SENTENCE_RESULT:" + JsonUtils.formatBeanToJsonStr(list));
 		logger.info("SQL_SENTENCE_EXEC_TIME:" + (end-start)+"ms");
@@ -49,9 +50,9 @@ public class BaseDAOImpl implements IBaseDAO {
 
 	public Map queryForMap(String sql, Object[] args) {
 		logger.info("SQL_SENTENCE:" + sql);
-		logger.info("SQL_SENTENCE_PARAMES:" + Arrays.toString(args));
+		logger.info("SQL_SENTENCE_PARAMES:" + Arrays.toString(ArrayUtils.getObjects(args)));
 		long start=System.currentTimeMillis();
-		Map map = this.jdbcTemplate.queryForMap(sql, args);
+		Map map = this.jdbcTemplate.queryForMap(sql, ArrayUtils.getObjects(args));
 		long end=System.currentTimeMillis();
 		logger.info("SQL_SENTENCE_RESULT:" + JsonUtils.formatBeanToJsonStr(map));
 		logger.info("SQL_SENTENCE_EXEC_TIME:" + (end-start)+"ms");
@@ -60,9 +61,9 @@ public class BaseDAOImpl implements IBaseDAO {
 
 	public int queryForInt(String sql, Object[] args) {
 		logger.info("SQL_SENTENCE:" + sql);
-		logger.info("SQL_SENTENCE_PARAMES:" + Arrays.toString(args));
+		logger.info("SQL_SENTENCE_PARAMES:" + Arrays.toString(ArrayUtils.getObjects(args)));
 		long start=System.currentTimeMillis();
-		int count = this.jdbcTemplate.queryForInt(sql, args);
+		int count = this.jdbcTemplate.queryForInt(sql, ArrayUtils.getObjects(args));
 		long end=System.currentTimeMillis();
 		logger.info("SQL_SENTENCE_RESULT:" + JsonUtils.formatBeanToJsonStr(count));
 		logger.info("SQL_SENTENCE_EXEC_TIME:" + (end-start)+"ms");
@@ -71,9 +72,9 @@ public class BaseDAOImpl implements IBaseDAO {
 
 	public int update(String sql, Object[] args) {
 		logger.info("SQL_SENTENCE:" + sql);
-		logger.info("SQL_SENTENCE_PARAMES:" + Arrays.toString(args));
+		logger.info("SQL_SENTENCE_PARAMES:" + Arrays.toString(ArrayUtils.getObjects(args)));
 		long start=System.currentTimeMillis();
-		int eff = this.jdbcTemplate.update(sql, args);
+		int eff = this.jdbcTemplate.update(sql, ArrayUtils.getObjects(args));
 		long end=System.currentTimeMillis();
 		logger.info("SQL_SENTENCE_RESULT:" + JsonUtils.formatBeanToJsonStr(eff));
 		logger.info("SQL_SENTENCE_EXEC_TIME:" + (end-start)+"ms");
