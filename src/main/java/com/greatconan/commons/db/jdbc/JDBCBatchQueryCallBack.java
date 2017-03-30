@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.greatconan.commons.db;
+package com.greatconan.commons.db.jdbc;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

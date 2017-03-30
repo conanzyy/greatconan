@@ -1,14 +1,14 @@
-package com.greatconan.commons.db;
+package com.greatconan.commons.db.jdbc;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import org.junit.Test;
 
-import com.greatconan.commons.db.JDBCBatchQueryCallBack;
-import com.greatconan.commons.db.JDBCQueryCallBack;
-import com.greatconan.commons.db.JDBCTemplate;
-import com.greatconan.commons.db.JDBCUpdateCallBack;
+import com.greatconan.commons.db.jdbc.JDBCBatchQueryCallBack;
+import com.greatconan.commons.db.jdbc.JDBCQueryCallBack;
+import com.greatconan.commons.db.jdbc.JDBCTemplate;
+import com.greatconan.commons.db.jdbc.JDBCUpdateCallBack;
 
 /**
  * 对封装的JDBCTemplate类的测试类

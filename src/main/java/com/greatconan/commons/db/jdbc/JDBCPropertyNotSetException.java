@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.greatconan.commons.db;
+package com.greatconan.commons.db.jdbc;
 
 /**
  * 自定义异常类，表示访问未设置的JDBC属性时的异常

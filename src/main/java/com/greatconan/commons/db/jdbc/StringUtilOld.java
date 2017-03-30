@@ -1,4 +1,4 @@
-package com.greatconan.commons.db;
+package com.greatconan.commons.db.jdbc;
 
 import java.text.DecimalFormat;
 import java.text.ParsePosition;
