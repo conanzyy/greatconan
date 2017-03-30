@@ -17,6 +17,7 @@
 	<!-- 扫描类包，将标注Spring注解的类自动转化Bean，同时完成Bean的注入 -->
 	<context:component-scan base-package="com.greatconan.conan.controller" />
 	<context:component-scan base-package="com.greatconan.conan.dao" />
+	<context:component-scan base-package="com.greatconan.commons.core.base" />
 	<context:component-scan base-package="com.greatconan.conan.service" />
 
 	<!-- 配置数据源 -->
@@ -56,7 +57,7 @@
 	<!-- 通过AOP配置提供事务增强，让service包下所有Bean的所有方法拥有事务 -->
 	<aop:config proxy-target-class="true">
 		<aop:pointcut id="serviceMethod"
-			expression=" execution(* com.service..*(..))" />
+			expression=" execution(* com.greatconan.conan.service..*(..))" />
 		<aop:advisor pointcut-ref="serviceMethod" advice-ref="txAdvice" />
 	</aop:config>
 	<tx:advice id="txAdvice" transaction-manager="transactionManager">
