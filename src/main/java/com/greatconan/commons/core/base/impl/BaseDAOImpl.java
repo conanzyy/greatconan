@@ -80,4 +80,47 @@ public class BaseDAOImpl implements IBaseDAO {
 		logger.info("SQL_SENTENCE_EXEC_TIME:" + (end-start)+"ms");
 		return eff;
 	}
+	public List queryForAllList(String sql, Object[] args) {
+		logger.info("SQL_SENTENCE:" + sql);
+		logger.info("SQL_SENTENCE_PARAMES:" + Arrays.toString(args));
+		long start=System.currentTimeMillis();
+		List list = this.jdbcTemplate.queryForList(sql, args);
+		long end=System.currentTimeMillis();
+		logger.info("SQL_SENTENCE_RESULT:" + JsonUtils.formatBeanToJsonStr(list));
+		logger.info("SQL_SENTENCE_EXEC_TIME:" + (end-start)+"ms");
+		return list;
+	}
+
+	public Map queryForAllMap(String sql, Object[] args) {
+		logger.info("SQL_SENTENCE:" + sql);
+		logger.info("SQL_SENTENCE_PARAMES:" + Arrays.toString(args));
+		long start=System.currentTimeMillis();
+		Map map = this.jdbcTemplate.queryForMap(sql, args);
+		long end=System.currentTimeMillis();
+		logger.info("SQL_SENTENCE_RESULT:" + JsonUtils.formatBeanToJsonStr(map));
+		logger.info("SQL_SENTENCE_EXEC_TIME:" + (end-start)+"ms");
+		return map;
+	}
+
+	public int queryForAllInt(String sql, Object[] args) {
+		logger.info("SQL_SENTENCE:" + sql);
+		logger.info("SQL_SENTENCE_PARAMES:" + Arrays.toString(args));
+		long start=System.currentTimeMillis();
+		int count = this.jdbcTemplate.queryForInt(sql, args);
+		long end=System.currentTimeMillis();
+		logger.info("SQL_SENTENCE_RESULT:" + JsonUtils.formatBeanToJsonStr(count));
+		logger.info("SQL_SENTENCE_EXEC_TIME:" + (end-start)+"ms");
+		return count;
+	}
+
+	public int updateAll(String sql, Object[] args) {
+		logger.info("SQL_SENTENCE:" + sql);
+		logger.info("SQL_SENTENCE_PARAMES:" + Arrays.toString(args));
+		long start=System.currentTimeMillis();
+		int eff = this.jdbcTemplate.update(sql, args);
+		long end=System.currentTimeMillis();
+		logger.info("SQL_SENTENCE_RESULT:" + JsonUtils.formatBeanToJsonStr(eff));
+		logger.info("SQL_SENTENCE_EXEC_TIME:" + (end-start)+"ms");
+		return eff;
+	}
 }
