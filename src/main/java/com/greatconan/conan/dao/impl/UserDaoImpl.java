@@ -2,12 +2,14 @@ package com.greatconan.conan.dao.impl;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowCallbackHandler;
 import org.springframework.stereotype.Repository;
 
+import com.greatconan.commons.core.base.IBaseDAO;
 import com.greatconan.conan.dao.UserDao;
 import com.greatconan.conan.model.User;
 
@@ -17,7 +19,9 @@ public class UserDaoImpl implements UserDao {
 	
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
-
+	@Autowired
+	private IBaseDAO baseDao;
+	
 	public void register(User user) {
 		String sqlStr = "insert into user(uname,pwd) values(?,?)";
 		Object[] params = new Object[]{user.getUserName(),user.getPassword()};
@@ -35,6 +39,13 @@ public class UserDaoImpl implements UserDao {
 			}
 		});
 		return user;
+	}
+	
+	
+	public List test(){
+		String sql = "select id,uname,pwd from user";
+		List list = baseDao.queryForList(sql);
+		return list;
 	}
 
 }
