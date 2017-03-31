@@ -80,7 +80,7 @@ public class UserController extends BaseController {
 		user=new User();
 		user.setUserName("zyy");
 		user.setPassword("12323");
-		user.setId(2);
+		user.setId(1);
 		userService.test(user);
 			mav.setViewName("login");
 			mav.addObject("Msg", "----aa");
