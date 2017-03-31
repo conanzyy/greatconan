@@ -48,7 +48,7 @@ public class ExpireJobTask {
     	   new Thread(){
 				@Override
 				public void run() {
-					if(minute==0){
+					if(minute==0 && second==0){
 		    	 		HourJobTask.doBiz();
 		    	 	}
 					}
@@ -57,7 +57,7 @@ public class ExpireJobTask {
 		   	new Thread(){
 				@Override
 				public void run() {
-					if(hour==0){
+					if(hour==0 && minute==0 && second==0 ){
 		    	 		DayJobTask.doBiz();
 		    	 	}
 				}
