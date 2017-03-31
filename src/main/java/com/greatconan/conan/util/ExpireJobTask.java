@@ -22,7 +22,13 @@ public class ExpireJobTask {
 //         System.out.println("时：" + now.get(Calendar.HOUR_OF_DAY));
 //         System.out.println("分：" + now.get(Calendar.MINUTE));
 //         System.out.println("秒：" + now.get(Calendar.SECOND));
-    	 	SecendJobTask.doBiz();
+	    	 new Thread(){
+					@Override
+					public void run() {
+						SecendJobTask.doBiz();
+					}
+	 	   }.start();
+    	 	
     	 	final int second=now.get(Calendar.SECOND);
     	 	final int minute=now.get(Calendar.MINUTE);
     	 	final int hour=now.get(Calendar.HOUR_OF_DAY);
