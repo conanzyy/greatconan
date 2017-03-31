@@ -73,6 +73,19 @@ public class UserController extends BaseController {
 		}
 	}
 	
+	@RequestMapping("/user/a")
+	public ModelAndView a(User user){
+		ModelAndView mav = new ModelAndView();
+//			mav.setViewName("success");
+		user=new User();
+		user.setUserName("zyy");
+		user.setPassword("12323");
+		userService.test(user);
+			mav.setViewName("login");
+			mav.addObject("Msg", "----aa");
+			return mav;
+	}
+	
 	@RequestMapping(value = "/getResult")
 	public String doSearch(HttpServletRequest req,
 			HttpServletResponse res, HttpSession sess,String Astr,String Bstr) throws IOException, ServletException {

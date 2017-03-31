@@ -1,5 +1,7 @@
 package com.greatconan.conan.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -35,6 +37,17 @@ public class UserServiceImp implements UserService {
 			System.out.println("id="+u.getId()+",  userName="+u.getUserName()+", password="+u.getPassword());
 			return false;
 		}
+	}
+	public List test(User user) {
+		List u  = userDao.test();
+//		System.out.println("id="+u.getId()+",  userName="+u.getUserName()+", password="+u.getPassword());
+//		if(user.getPassword().equals(u.getPassword())){
+//			return u;
+//		}
+//		else{
+//			return null;
+//		}
+		return u;
 	}
 
 }
