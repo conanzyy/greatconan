@@ -11,6 +11,7 @@ public class ExpireJobTask {
     /** Logger */
     private static final Logger logger = LoggerFactory.getLogger(ExpireJobTask.class);
     private static final String defineTime="21:00:05";
+    private static final int perMinute=2;
     /**
      * 业务逻辑处理
      */
@@ -76,7 +77,14 @@ public class ExpireJobTask {
 				}
 		   }.start();
 		   
-         
+		   new Thread(){
+				@Override
+				public void run() {
+					if(minute%perMinute==0 && second==0){
+						PerMinutejobTask.doBiz();
+			         }
+				}
+		   }.start();
          
     	
     }

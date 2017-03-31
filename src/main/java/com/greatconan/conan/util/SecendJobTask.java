@@ -16,12 +16,12 @@ public class SecendJobTask {
      */
     public static void doBiz() {
     	logger.info("----miao--------------");
-    	Spider.create(new Start5())
-        //从"https://github.com/code4craft"开始抓
-        .addUrl("https://github.com/code4craft")
-        //开启5个线程抓取
-        .thread(5)
-        //启动爬虫
-        .run();
+//    	Spider.create(new Start5())
+//        //从"https://github.com/code4craft"开始抓
+//        .addUrl("https://github.com/code4craft")
+//        //开启5个线程抓取
+//        .thread(5)
+//        //启动爬虫
+//        .run();
     }
 }
