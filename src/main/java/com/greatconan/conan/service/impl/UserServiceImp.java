@@ -39,7 +39,7 @@ public class UserServiceImp implements UserService {
 		}
 	}
 	public List test(User user) {
-		List u  = userDao.test();
+		List u  = userDao.test(user);
 //		System.out.println("id="+u.getId()+",  userName="+u.getUserName()+", password="+u.getPassword());
 //		if(user.getPassword().equals(u.getPassword())){
 //			return u;

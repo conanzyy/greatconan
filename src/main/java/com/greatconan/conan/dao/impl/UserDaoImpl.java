@@ -42,9 +42,16 @@ public class UserDaoImpl implements UserDao {
 	}
 	
 	
-	public List test(){
-		String sql = "select id,uname,pwd from user";
-		List list = baseDao.queryForList(sql);
+	public List test(User user){
+		String sql = "select id,uname,pwd from user where 1=1 ";
+		if(user.getId()!=0){
+			sql+="and id=? ";
+		}
+		if(user.getUserName()!=null){
+			sql+="and uname=? ";
+		}
+		Object[] args=new Object[]{user.getId(),user.getUserName()};
+		List list = baseDao.queryForList(sql,args);
 		return list;
 	}
 
