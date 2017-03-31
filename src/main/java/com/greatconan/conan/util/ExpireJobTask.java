@@ -10,7 +10,7 @@ import org.slf4j.LoggerFactory;
 public class ExpireJobTask {
     /** Logger */
     private static final Logger logger = LoggerFactory.getLogger(ExpireJobTask.class);
-    private static final String defineTime="21:00:00";
+    private static final String defineTime="21:00:01";
     /**
      * 业务逻辑处理
      */
