@@ -10,7 +10,7 @@ public class DayJobTask {
     /**
      * 业务逻辑处理
      */
-    public static void doBiz() {
-    	logger.info("-----day-------------");
+    public  void doBiz() {
+//    	logger.info("-----day-------------");
     }
 }

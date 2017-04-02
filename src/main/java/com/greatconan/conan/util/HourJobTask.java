@@ -10,7 +10,7 @@ public class HourJobTask {
     /**
      * 业务逻辑处理
      */
-    public static void doBiz() {
-    	logger.info("-----hour-------------");
+    public  void doBiz() {
+//    	logger.info("-----hour-------------");
     }
 }

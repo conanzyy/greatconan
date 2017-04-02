@@ -10,7 +10,7 @@ public class DefinedJobTask {
     /**
      * 业务逻辑处理
      */
-    public static void doBiz() {
+    public  void doBiz() {
     	logger.info("------dingyi------------");
     }
 }

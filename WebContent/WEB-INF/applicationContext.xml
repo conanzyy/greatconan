@@ -19,6 +19,7 @@
 	<context:component-scan base-package="com.greatconan.conan.dao" />
 	<context:component-scan base-package="com.greatconan.commons.core.base" />
 	<context:component-scan base-package="com.greatconan.conan.service" />
+	<context:component-scan base-package="com.greatconan.conan.util" />
 
 	<!-- 配置数据源 -->
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"	destroy-method="close">
@@ -85,8 +86,22 @@
 	</bean>
 	
 	<!-- 业务对象 -->
-<bean id="bizObject" class="com.greatconan.conan.util.ExpireJobTask" />
-	
+<bean id="secendJobTask" class="com.greatconan.conan.util.SecendJobTask"/>
+<bean id="minuteJobTask" class="com.greatconan.conan.util.MinuteJobTask"/>
+<bean id="hourJobTask" class="com.greatconan.conan.util.HourJobTask"/>
+<bean id="dayJobTask" class="com.greatconan.conan.util.DayJobTask"/>
+<bean id="perMinutejobTask" class="com.greatconan.conan.util.PerMinutejobTask"/>
+<bean id="definedJobTask" class="com.greatconan.conan.util.DefinedJobTask"/>
+<bean id="bizObject" class="com.greatconan.conan.util.ExpireJobTask" >
+<property name="secendJobTask" ref="secendJobTask" />
+<property name="minuteJobTask" ref="minuteJobTask" />
+<property name="hourJobTask" ref="hourJobTask" />
+<property name="dayJobTask" ref="dayJobTask" />
+<property name="perMinutejobTask" ref="perMinutejobTask" />
+<property name="definedJobTask" ref="definedJobTask" />
+</bean>
+
+
 	<!-- 调度业务 -->
 <bean id="jobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
  <property name="targetObject" ref="bizObject" />
@@ -113,5 +128,6 @@
  </property>
  <property name="taskExecutor" ref="executor" />
 </bean>
-		
+
+
 </beans>
