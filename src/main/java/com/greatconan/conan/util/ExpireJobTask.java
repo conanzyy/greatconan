@@ -12,7 +12,7 @@ public class ExpireJobTask {
     /** Logger */
     private static final Logger logger = LoggerFactory.getLogger(ExpireJobTask.class);
     private static final String defineTime="03:00:00";
-    private static final int perMinute=2;
+    private static final int perMinute=30;
     @Autowired
     private SecendJobTask secendJobTask;
     @Autowired
@@ -107,7 +107,7 @@ public class ExpireJobTask {
 	    	 new Thread(){
 					@Override
 					public void run() {
-						secendJobTask.doBiz();
+					//	secendJobTask.doBiz();
 					}
 	 	   }.start();
     	 	
@@ -122,7 +122,7 @@ public class ExpireJobTask {
 				@Override
 				public void run() {
 					if(second==0){
-						minuteJobTask.doBiz();
+					//	minuteJobTask.doBiz();
 		    	 	}
 				}
     	   }.start();
