@@ -68,7 +68,7 @@ public class JsonController extends BaseController {
 //	        mav.setView(view);
 //	        
 		logger.info("--end-----/json/getJson--");
-		return ajax(response,jsn);
+		return ajaxJsonp(response,jsn,null);
 	}
 	
 	
