@@ -66,7 +66,7 @@ public class JsonController extends BaseController {
 //        view.setAttributesMap(attributes);
 ////        view.s
 //	        mav.setView(view);
-//	        
+//	        http://127.0.0.1:8088/conan/json/getJson.json?req=12
 		logger.info("--end-----/json/getJson--");
 		return ajaxJsonp(response,jsn,null);
 	}
