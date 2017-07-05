@@ -1,14 +1,13 @@
 package com.greatconan.conan.util;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
+import com.greatconan.conan.service.JobService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.greatconan.conan.service.JobService;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class MinuteJobTask {
     /** Logger */
