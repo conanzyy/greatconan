@@ -26,7 +26,7 @@ public class MinuteJobTask {
   		for(Object job:joblist){
   			@SuppressWarnings("rawtypes")
 			Map jobmap=(HashMap)job;
-  			String sql=(String ) jobmap.get("job_sql");
+  			String sql=(String) jobmap.get("job_sql");
   			String args=(String) jobmap.get("job_args");
   			int job_id=Integer.parseInt(jobmap.get("job_id").toString());
   			int job_num=Integer.parseInt(jobmap.get("job_num").toString());
