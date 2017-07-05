@@ -28,8 +28,8 @@ public class MinuteJobTask {
 			Map jobmap=(HashMap)job;
   			String sql=(String) jobmap.get("job_sql");
   			String args=(String) jobmap.get("job_args");
-  			int job_id=(int) jobmap.get("job_id");
-  			int job_num=(int) jobmap.get("job_num");
+  			int job_id=Integer.parseInt(jobmap.get("job_id").toString());
+  			int job_num=Integer.parseInt(jobmap.get("job_num").toString());
   			Object[] args_obj=JsonUtils.parseJsonStrToBean(args, Object[].class);
   			String new_sql="update job set job_status = ? , job_num = ? where job_id = ?";
   			Object[] args_obj_new=new Object[]{"1",job_num,job_id};
